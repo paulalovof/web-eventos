@@ -64,9 +64,12 @@ window.addEventListener("load", () => {
 
         elemento.lastElementChild.addEventListener("click", (event) => {
             event.preventDefault();
-            elemento.lastElementChild.getAttribute('idAnimal');
+            let animalSelecionado = elemento.lastElementChild.getAttribute('idAnimal');
 
-            alert(elemento.lastElementChild.getAttribute('idAnimal'));
+            alert(animalSelecionado);
+
+            sessionStorage.setItem("idAnimal", animalSelecionado);
+            //document.cookie = `idAnimal=${animalSelecionado}`;
             
             window.location.href = "./adotar.html";
             
@@ -74,4 +77,4 @@ window.addEventListener("load", () => {
     });
 });
 
-//container.classList.add('change-background');
+

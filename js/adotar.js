@@ -44,10 +44,16 @@ formulario.addEventListener("submit", (event) => {
       renda: renda.value,
       residencia: opcao.value,
       intencao: intencao.value.trim(),
-      idAnimal: "1",
+      idAnimal: sessionStorage.getItem("idAnimal"),
     };
 
-    console.log(adotante);
+    let adotanteJson = JSON.stringify(adotante);
+    console.log(adotanteJson);
+
+    let adotante2 = JSON.parse(adotanteJson);
+    console.log(adotante2);
+
+    
   }else{
     event.preventDefault();
   }
